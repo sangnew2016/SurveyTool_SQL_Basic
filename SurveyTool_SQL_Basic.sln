@@ -1,0 +1,64 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningPlatform.Domain", "LearningPlatform.Domain\LearningPlatform.Domain.csproj", "{AD219621-05C3-49E0-9596-E814055AA4E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningPlatform.Data.EntityFramework", "LearningPlatform.Data.EntityFramework\LearningPlatform.Data.EntityFramework.csproj", "{0E13FCF3-481F-405D-9950-F175E404EC49}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{8FA7E53C-3969-4733-9E1F-6435A38AF42B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F32F9B52-62B4-4241-97B9-817374DD26C6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{1F4D4146-9113-4929-B499-480B74514C53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{6FF58583-7BD3-40D2-AD0E-F8066AB925DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningPlatform.Api", "LearningPlatform.Api\LearningPlatform.Api.csproj", "{A9EB9A89-9114-472E-AEE2-FF6F1575A881}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A} = {B4F6657B-1BCB-47F9-B6F0-780DDBC4201A}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningPlatform.Data.Memory", "LearningPlatform.Data.Memory\LearningPlatform.Data.Memory.csproj", "{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearningPlatform.Application", "LearningPlatform.Application\LearningPlatform.Application.csproj", "{340463C6-B24A-40B5-95DA-E246AABB0A5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD219621-05C3-49E0-9596-E814055AA4E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD219621-05C3-49E0-9596-E814055AA4E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD219621-05C3-49E0-9596-E814055AA4E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD219621-05C3-49E0-9596-E814055AA4E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E13FCF3-481F-405D-9950-F175E404EC49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E13FCF3-481F-405D-9950-F175E404EC49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E13FCF3-481F-405D-9950-F175E404EC49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E13FCF3-481F-405D-9950-F175E404EC49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9EB9A89-9114-472E-AEE2-FF6F1575A881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9EB9A89-9114-472E-AEE2-FF6F1575A881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9EB9A89-9114-472E-AEE2-FF6F1575A881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9EB9A89-9114-472E-AEE2-FF6F1575A881}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{340463C6-B24A-40B5-95DA-E246AABB0A5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340463C6-B24A-40B5-95DA-E246AABB0A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340463C6-B24A-40B5-95DA-E246AABB0A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340463C6-B24A-40B5-95DA-E246AABB0A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD219621-05C3-49E0-9596-E814055AA4E8} = {F32F9B52-62B4-4241-97B9-817374DD26C6}
+		{0E13FCF3-481F-405D-9950-F175E404EC49} = {8FA7E53C-3969-4733-9E1F-6435A38AF42B}
+		{A9EB9A89-9114-472E-AEE2-FF6F1575A881} = {6FF58583-7BD3-40D2-AD0E-F8066AB925DF}
+		{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A} = {8FA7E53C-3969-4733-9E1F-6435A38AF42B}
+		{340463C6-B24A-40B5-95DA-E246AABB0A5F} = {1F4D4146-9113-4929-B499-480B74514C53}
+	EndGlobalSection
+EndGlobal

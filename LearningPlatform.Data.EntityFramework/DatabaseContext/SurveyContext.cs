@@ -2,6 +2,8 @@
 using LearningPlatform.Domain.SurveyDesign;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using LearningPlatform.Domain.SurveyDesign.LangageStrings;
+using LearningPlatform.Domain.SurveyDesign.Resources;
 
 namespace LearningPlatform.Data.EntityFramework.DatabaseContext
 {
@@ -17,6 +19,9 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
         }
 
         public DbSet<Survey> Surveys { get; set; }
+        public DbSet<LanguageString> LanguageStrings { get; set; }
+        public DbSet<ResourceString> ResourceStrings { get; set; }
+        public DbSet<ResourceStringItem> ResourceStringItems { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -36,11 +41,12 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
             {
                 foreach (var errorEntityValidation in exception.EntityValidationErrors)
                 {
-                    var msg = string.Format("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                        errorEntityValidation.Entry.Entity.GetType().Name, errorEntityValidation.Entry.State);
+                    var msg =
+                        $"Entity of type \"{errorEntityValidation.Entry.Entity.GetType().Name}\" in state \"{errorEntityValidation.Entry.State}\" has the following validation errors:";
                     foreach (var validationError in errorEntityValidation.ValidationErrors)
                     {
-                        msg += string.Format("---- Property: \"{0}\", Error: \"{1}\"", validationError.PropertyName, validationError.ErrorMessage);
+                        msg +=
+                            $"---- Property: \"{validationError.PropertyName}\", Error: \"{validationError.ErrorMessage}\"";
                     }
                 }
                 throw;

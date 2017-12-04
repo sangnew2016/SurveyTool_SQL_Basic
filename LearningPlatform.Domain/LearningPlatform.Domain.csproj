@@ -66,6 +66,7 @@
     <Compile Include="Common\IUnitOfWorkFactory.cs" />
     <Compile Include="Common\IVersionable.cs" />
     <Compile Include="Common\JsonSerializerSettingsFactory.cs" />
+    <Compile Include="Common\MapperService.cs" />
     <Compile Include="Common\RequestObjectProvider.cs" />
     <Compile Include="Common\TypeNameSerializationBinder.cs" />
     <Compile Include="Common\Utils\GuidUtil.cs" />
@@ -77,10 +78,23 @@
     <Compile Include="Exceptions\SurveyNotFoundException.cs" />
     <Compile Include="Mapping\DomainAutoMapperProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurveyDesign\LangageStrings\ILanguageString.cs" />
+    <Compile Include="SurveyDesign\LangageStrings\ILanguageStringItem.cs" />
+    <Compile Include="SurveyDesign\LangageStrings\ILanguageStringRepository.cs" />
+    <Compile Include="SurveyDesign\LangageStrings\LanguageString.cs" />
+    <Compile Include="SurveyDesign\LangageStrings\LanguageStringFactory.cs" />
+    <Compile Include="SurveyDesign\LangageStrings\LanguageStringItem.cs" />
     <Compile Include="SurveyDesign\RepositoryContracts\ISurveyRepository.cs" />
     <Compile Include="SurveyDesign\RepositoryContracts\Models\SurveySearchFilter.cs" />
     <Compile Include="SurveyDesign\RepositoryContracts\Models\SurveyStatusFilter.cs" />
     <Compile Include="SurveyDesign\RepositoryContracts\SurveyDefinitionService.cs" />
+    <Compile Include="SurveyDesign\Resources\EvaluationString.cs" />
+    <Compile Include="SurveyDesign\Resources\IResourceManager.cs" />
+    <Compile Include="SurveyDesign\Resources\IResourceStringRepository.cs" />
+    <Compile Include="SurveyDesign\Resources\IScriptExecutor.cs" />
+    <Compile Include="SurveyDesign\Resources\ResourceString.cs" />
+    <Compile Include="SurveyDesign\Resources\ResourceStringItem.cs" />
+    <Compile Include="SurveyDesign\Resources\SurveyResourceManager.cs" />
     <Compile Include="SurveyDesign\Survey.cs" />
     <Compile Include="SurveyDesign\SurveyDesign.cs" />
   </ItemGroup>

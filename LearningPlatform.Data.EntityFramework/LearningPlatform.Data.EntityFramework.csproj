@@ -102,6 +102,9 @@
       <DependentUpon>201712010650201_ChangeSurveyModel.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityFrameworkDataModule.cs" />
+    <Compile Include="Mapping\SurveyDesigner\LanguageStringMap.cs" />
+    <Compile Include="Mapping\SurveyDesigner\ResourceStringItemMap.cs" />
+    <Compile Include="Mapping\SurveyDesigner\ResourceStringMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\SurveyMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseRepository\GenericRepository.cs" />
@@ -109,6 +112,8 @@
     <Compile Include="DatabaseContext\SurveyContext.cs" />
     <Compile Include="DatabaseContext\SurveyContextConfiguration.cs" />
     <Compile Include="DatabaseContext\SurveyContextInitializer.cs" />
+    <Compile Include="Repository\LanguageStringRepository.cs" />
+    <Compile Include="Repository\ResourceStringRepository.cs" />
     <Compile Include="Repository\SurveyRepository.cs" />
   </ItemGroup>
   <ItemGroup>

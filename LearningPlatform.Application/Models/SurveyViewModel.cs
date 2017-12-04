@@ -7,6 +7,8 @@ namespace LearningPlatform.Application.Models
         public long SurveyId { get; set; }
         public string Name { get; set; }
         public SurveyStatus SurveyStatus { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
 
         public byte[] RowVersion { get; set; }
     }

@@ -72,6 +72,7 @@
     <Compile Include="Common\Utils\GuidUtil.cs" />
     <Compile Include="Constants\ComparisonOperators.cs" />
     <Compile Include="Constants\SurveyStatus.cs" />
+    <Compile Include="Constants\ValidationConstants.cs" />
     <Compile Include="DomainModule.cs" />
     <Compile Include="Exceptions\ConcurrencyException.cs" />
     <Compile Include="Exceptions\EntityNotFoundException.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="SurveyDesign\LangageStrings\ILanguageString.cs" />
     <Compile Include="SurveyDesign\LangageStrings\ILanguageStringItem.cs" />
     <Compile Include="SurveyDesign\LangageStrings\ILanguageStringRepository.cs" />
+    <Compile Include="SurveyDesign\LangageStrings\LanguageService.cs" />
     <Compile Include="SurveyDesign\LangageStrings\LanguageString.cs" />
     <Compile Include="SurveyDesign\LangageStrings\LanguageStringFactory.cs" />
     <Compile Include="SurveyDesign\LangageStrings\LanguageStringItem.cs" />

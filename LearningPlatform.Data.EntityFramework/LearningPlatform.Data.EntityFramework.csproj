@@ -101,7 +101,12 @@
     <Compile Include="DatabaseContext\Migrations\201712010650201_ChangeSurveyModel.Designer.cs">
       <DependentUpon>201712010650201_ChangeSurveyModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseContext\Migrations\201712040734024_Add_MultiLanguage_Resources.cs" />
+    <Compile Include="DatabaseContext\Migrations\201712040734024_Add_MultiLanguage_Resources.Designer.cs">
+      <DependentUpon>201712040734024_Add_MultiLanguage_Resources.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntityFrameworkDataModule.cs" />
+    <Compile Include="Mapping\SurveyDesigner\LanguageStringItemMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\LanguageStringMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\ResourceStringItemMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\ResourceStringMap.cs" />
@@ -117,6 +122,10 @@
     <Compile Include="Repository\SurveyRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\LearningPlatform.Data.Memory\LearningPlatform.Data.Memory.csproj">
+      <Project>{B4F6657B-1BCB-47F9-B6F0-780DDBC4201A}</Project>
+      <Name>LearningPlatform.Data.Memory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LearningPlatform.Domain\LearningPlatform.Domain.csproj">
       <Project>{AD219621-05C3-49E0-9596-E814055AA4E8}</Project>
       <Name>LearningPlatform.Domain</Name>
@@ -133,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DatabaseContext\Migrations\201712010650201_ChangeSurveyModel.resx">
       <DependentUpon>201712010650201_ChangeSurveyModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseContext\Migrations\201712040734024_Add_MultiLanguage_Resources.resx">
+      <DependentUpon>201712040734024_Add_MultiLanguage_Resources.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

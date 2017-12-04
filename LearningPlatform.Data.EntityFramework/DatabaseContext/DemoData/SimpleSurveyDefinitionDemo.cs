@@ -28,7 +28,7 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext.DemoData
             if (_surveyRepository.Exists(surveyId)) return;
             //To Do
             var create = _surveyDesignFactory.Invoke(surveyId: surveyId, useDatabaseIds: true);
-            var survey = create.Survey("Simple Survey", "f6e021af-a6a0-4039-83f4-152595b4671a");
+            var survey = create.Survey("Simple Survey", "f6e021af-a6a0-4039-83f4-152595b4671a", "Simple survey title", "Simple survey description");
 
             _surveyRepository.Add(survey);
             _surveyContextProvider.Get().SaveChanges();

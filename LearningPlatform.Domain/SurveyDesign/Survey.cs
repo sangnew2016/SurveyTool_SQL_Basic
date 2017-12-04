@@ -2,6 +2,7 @@
 using LearningPlatform.Domain.Constants;
 using Newtonsoft.Json;
 using System;
+using LearningPlatform.Domain.SurveyDesign.LangageStrings;
 
 namespace LearningPlatform.Domain.SurveyDesign
 {
@@ -10,6 +11,12 @@ namespace LearningPlatform.Domain.SurveyDesign
         public long Id { get; set; }
 
         public string Name { get; set; }
+
+        //=============================================
+        //set language
+        //=============================================
+        public LanguageString Title { get; set; }
+        public LanguageString Description { get; set; }
 
         public SurveyStatus Status { get; set; }
 

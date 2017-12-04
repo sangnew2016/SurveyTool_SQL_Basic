@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataMemoryAccessModule.cs" />
+    <Compile Include="MemoryLanguageStringsData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DummyUnitOfWork.cs" />
     <Compile Include="Repository\DummyUnitOfWorkFactory.cs" />

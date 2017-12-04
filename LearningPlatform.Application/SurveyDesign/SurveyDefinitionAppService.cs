@@ -62,9 +62,9 @@ namespace LearningPlatform.Application.SurveyDesign
         {
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
-                var userId = Guid.NewGuid().ToString();                
+                var userId = Guid.NewGuid().ToString();
                 var surveyFactory = _surveyDesignFactory.Invoke(useDatabaseIds: true);
-                var survey = surveyFactory.Survey(surveyModel.Name, userId);
+                var survey = surveyFactory.Survey(surveyModel.Name, userId, surveyModel.Title, surveyModel.Description);
 
                 _surveyRepository.Add(survey);
                 unitOfWork.SavePoint();
@@ -79,7 +79,10 @@ namespace LearningPlatform.Application.SurveyDesign
             using (var unitOfWork = _unitOfWorkFactory.Create())
             {
                 var survey = _surveyRepository.GetById(surveyModel.SurveyId);
+                var surveyFactory = _surveyDesignFactory.Invoke(useDatabaseIds: true);
                 survey.Name = surveyModel.Name;
+                survey.Title = surveyFactory.CreateLanguageString(surveyModel.Title);
+                survey.Description = surveyFactory.CreateLanguageString(surveyModel.Description);
 
                 _surveyRepository.Update(survey);
 

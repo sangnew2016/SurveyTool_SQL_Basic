@@ -27,6 +27,12 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new SurveyMap());
+
+            modelBuilder.Configurations.Add(new LanguageStringMap());
+            modelBuilder.Configurations.Add(new LanguageStringItemMap());
+
+            modelBuilder.Configurations.Add(new ResourceStringMap());
+            modelBuilder.Configurations.Add(new ResourceStringItemMap());
         }
 
         public override int SaveChanges()

@@ -7,16 +7,16 @@ namespace LearningPlatform.Domain.SurveyDesign
 {
     public class SurveyDesign
     {
-
         //Mot Delegate de ben file hkac xai ma khong
-        public delegate SurveyDesign Factory(long? surveyId = null, bool useDatabaseIds = false);
+        public delegate SurveyDesign Factory(long? surveyId = null, bool useDatabaseIds = false, string language = MultipleLanguages.DEFAULT_LANGUAGE);
 
         private bool _useDatabaseIds;
+        private string _language;
         private readonly Survey _survey;
         private readonly LanguageStringFactory _languageStringFactory;
         private readonly LanguageService _languageService;
 
-        public SurveyDesign(long? surveyId, bool useDatabaseIds,
+        public SurveyDesign(long? surveyId, bool useDatabaseIds, string language,
             LanguageStringFactory languageStringFactory,
             LanguageService languageService)
         {
@@ -30,6 +30,7 @@ namespace LearningPlatform.Domain.SurveyDesign
             if (surveyId.HasValue) _survey.Id = surveyId.Value;
 
             _useDatabaseIds = useDatabaseIds;
+            _language = language;
             _languageStringFactory = languageStringFactory;
             _languageService = languageService;
         }
@@ -58,7 +59,7 @@ namespace LearningPlatform.Domain.SurveyDesign
             var languageString = _languageStringFactory.Create();
             foreach (var s in strings)
             {
-                string lang = "en";
+                string lang = _language;
                 var str = s;
                 if (s.Contains("::"))
                 {

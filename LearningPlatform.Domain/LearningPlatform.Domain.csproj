@@ -71,6 +71,7 @@
     <Compile Include="Common\TypeNameSerializationBinder.cs" />
     <Compile Include="Common\Utils\GuidUtil.cs" />
     <Compile Include="Constants\ComparisonOperators.cs" />
+    <Compile Include="Constants\MultipleLanguages.cs" />
     <Compile Include="Constants\SurveyStatus.cs" />
     <Compile Include="Constants\ValidationConstants.cs" />
     <Compile Include="DomainModule.cs" />

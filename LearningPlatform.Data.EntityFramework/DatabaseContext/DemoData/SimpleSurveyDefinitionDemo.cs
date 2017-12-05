@@ -1,11 +1,6 @@
 ﻿using LearningPlatform.Domain.Common;
 using LearningPlatform.Domain.SurveyDesign;
 using LearningPlatform.Domain.SurveyDesign.RepositoryContracts;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LearningPlatform.Data.EntityFramework.DatabaseContext.DemoData
 {

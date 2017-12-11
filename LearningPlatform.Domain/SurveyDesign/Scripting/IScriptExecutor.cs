@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LearningPlatform.Domain.SurveyDesign.Resources
+namespace LearningPlatform.Domain.SurveyDesign.Scripting
 {
     public interface IScriptExecutor : IDisposable
     {

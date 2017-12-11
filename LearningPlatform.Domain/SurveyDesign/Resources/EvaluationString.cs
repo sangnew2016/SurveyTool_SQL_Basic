@@ -1,4 +1,6 @@
-﻿namespace LearningPlatform.Domain.SurveyDesign.Resources
+﻿using LearningPlatform.Domain.SurveyDesign.Scripting;
+
+namespace LearningPlatform.Domain.SurveyDesign.Resources
 {
     public class EvaluationString
     {

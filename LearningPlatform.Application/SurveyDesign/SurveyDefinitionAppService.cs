@@ -64,7 +64,7 @@ namespace LearningPlatform.Application.SurveyDesign
             {
                 var userId = Guid.NewGuid().ToString();
                 var surveyFactory = _surveyDesignFactory.Invoke(useDatabaseIds: true);
-                var survey = surveyFactory.Survey(surveyModel.Name, userId, surveyModel.Title, surveyModel.Description);
+                var survey = surveyFactory.Survey(surveyModel.Name, userId,new[] {surveyModel.Title}, new[] {surveyModel.Description});
 
                 _surveyRepository.Add(survey);
                 unitOfWork.SavePoint();

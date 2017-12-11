@@ -111,6 +111,7 @@
     <Compile Include="SurveyDesign\Scripting\StringListExtensionMethods.cs" />
     <Compile Include="SurveyDesign\Survey.cs" />
     <Compile Include="SurveyDesign\SurveyDesign.cs" />
+    <Compile Include="SurveyExecution\Request\RequestContextWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

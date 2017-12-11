@@ -21,12 +21,24 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext.DemoData
         {
             const long surveyId = 1;
             if (_surveyRepository.Exists(surveyId)) return;
-            //To Do
+
+            //============================
+            // EX: use multi language
+            //============================
             var create = _surveyDesignFactory.Invoke(surveyId: surveyId, useDatabaseIds: true, language: "en");
-            var survey = create.Survey("Simple Survey", "f6e021af-a6a0-4039-83f4-152595b4671a", "Simple survey title", "Simple survey description");
+            var survey = create.Survey(
+                surveyModelName: "Simple Survey",
+                userId: "f6e021af-a6a0-4039-83f4-152595b4671a",
+                title: new [] {"Simple survey title", "vn::Tieu de khao sat don gian"},
+                description: new [] {"Simple survey description", "vn::Mo ta khao sat don gian"});
 
             _surveyRepository.Add(survey);
             _surveyContextProvider.Get().SaveChanges();
+
+            //============================
+            // EX: javascript inside C#
+            //============================
+
         }
     }
 }

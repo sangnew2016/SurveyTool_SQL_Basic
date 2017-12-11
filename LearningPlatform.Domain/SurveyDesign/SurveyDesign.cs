@@ -37,12 +37,12 @@ namespace LearningPlatform.Domain.SurveyDesign
 
         public long SurveyId => _survey.Id;
 
-        public Survey Survey(string surveyModelName, string userId, string title, string description)
+        public Survey Survey(string surveyModelName, string userId, string[] title, string[] description)
         {
             _survey.Name = surveyModelName;
             _survey.UserId = userId;
-            _survey.Title = CreateLanguageString(ToArray(title));
-            _survey.Description = CreateLanguageString(ToArray(description));
+            _survey.Title = CreateLanguageString(title);
+            _survey.Description = CreateLanguageString(description);
 
             return _survey;
         }

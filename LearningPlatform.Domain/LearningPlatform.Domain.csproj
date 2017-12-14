@@ -98,6 +98,7 @@
     <Compile Include="SurveyDesign\Resources\EvaluationString.cs" />
     <Compile Include="SurveyDesign\Resources\IResourceManager.cs" />
     <Compile Include="SurveyDesign\Resources\IResourceStringRepository.cs" />
+    <Compile Include="SurveyDesign\Scripting\HostObject.cs" />
     <Compile Include="SurveyDesign\Scripting\IHostObject.cs" />
     <Compile Include="SurveyDesign\Scripting\IScriptCodeReader.cs" />
     <Compile Include="SurveyDesign\Scripting\IScriptExecutor.cs" />

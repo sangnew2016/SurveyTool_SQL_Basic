@@ -13,7 +13,7 @@ function contains(array, obj) {
 }
 
 function containsString(answer, str) {
-    if (answer == undefined || typeof (answer) !== 'string') return false;
+    if (answer === undefined || typeof (answer) !== 'string') return false;
     return answer.indexOf(str) !== -1;
 }
 

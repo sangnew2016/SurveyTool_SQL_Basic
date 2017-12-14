@@ -34,7 +34,7 @@ namespace LearningPlatform.Domain.SurveyDesign.Scripting
         public void EvaluateCode(string code)
         {
             V8ScriptEngine engine;
-            if (!_engines.TryGetValue(SurveyId, out engine))
+            if (!_engines.TryGetValue(EngineKey, out engine))
             {
                 engine = CreateEngine();
             }
@@ -44,7 +44,7 @@ namespace LearningPlatform.Domain.SurveyDesign.Scripting
         public T EvaluateCode<T>(string code)
         {
             V8ScriptEngine engine;
-            if (!_engines.TryGetValue(SurveyId, out engine))
+            if (!_engines.TryGetValue(EngineKey, out engine))
             {
                 engine = CreateEngine();
             }
@@ -81,6 +81,12 @@ namespace LearningPlatform.Domain.SurveyDesign.Scripting
             return obj + "";
         }
 
+        /*==========================================
+         * instance == object duoc tao luu tru toan cuc giong bien window trong engine
+         * questions == object (va duoc tao tu JavascriptPropertyBag)
+         * phuong thuc, thuoc tinh se duoc render dynamic khi truy xuat tu javascript
+         * Tom lai: code la javascript nhung gia tri lay tu C#
+         ==========================================*/
         private V8ScriptEngine CreateEngine()
         {
             var engine = _runtime.CreateScriptEngine();
@@ -96,13 +102,17 @@ namespace LearningPlatform.Domain.SurveyDesign.Scripting
 
             engine.AddHostType("PropertyBag", typeof(PropertyBag));
             engine.AddHostType("List", typeof(List<string>));
-            _engines[SurveyId] = engine;
+            _engines[EngineKey] = engine;
             return engine;
         }
 
-        private long SurveyId
+        private long EngineKey
         {
-            get { return _requestContext.Survey.Id; }
+            get
+            {
+                //return _requestContext.Survey.Id;
+                return 123;
+            }
         }
 
         public void Dispose()

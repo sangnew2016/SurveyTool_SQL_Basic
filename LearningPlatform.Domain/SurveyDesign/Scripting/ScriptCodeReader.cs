@@ -7,7 +7,8 @@ namespace LearningPlatform.Domain.SurveyDesign.Scripting
     {
         public string GetApiCode()
         {
-            return File.ReadAllText(Path.Combine(ApplicationPath, @"SurveyDesign\Scripting\javascriptGlobalFunctions.js"));
+            var domainPath = ApplicationPath.Replace("LearningPlatform.Api\\bin", "LearningPlatform.Domain");
+            return File.ReadAllText(Path.Combine(domainPath, @"SurveyDesign\Scripting\javascriptGlobalFunctions.js"));
         }
 
         private string ApplicationPath

@@ -9,6 +9,8 @@ namespace LearningPlatform.Domain.SurveyDesign
     {
         public long Id { get; set; }
 
+        public Folder TopFolder { get; set; }
+
         public string Name { get; set; }
 
         public SurveyStatus Status { get; set; }
@@ -21,13 +23,12 @@ namespace LearningPlatform.Domain.SurveyDesign
                 return Status == SurveyStatus.Closed || Status == SurveyStatus.TemprorarilyClosed;
             }
         }
-
         public bool IsDeleted { get; set; }
 
         public byte[] RowVersion { get; set; }
         public DateTime? Created { get; set; }
         public DateTime? Modified { get; set; }
-
+        public DateTime? LastPublished { get; set; }
         public string UserId { get; set; }
     }
 }

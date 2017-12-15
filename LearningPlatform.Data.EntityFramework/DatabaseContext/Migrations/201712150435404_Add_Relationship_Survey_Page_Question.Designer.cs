@@ -7,13 +7,13 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class GeneralModelEntities : IMigrationMetadata
+    public sealed partial class Add_Relationship_Survey_Page_Question : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(GeneralModelEntities));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Add_Relationship_Survey_Page_Question));
         
         string IMigrationMetadata.Id
         {
-            get { return "201711300426224_GeneralModelEntities"; }
+            get { return "201712150435404_Add_Relationship_Survey_Page_Question"; }
         }
         
         string IMigrationMetadata.Source

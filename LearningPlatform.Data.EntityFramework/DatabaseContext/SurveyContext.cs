@@ -2,6 +2,10 @@
 using LearningPlatform.Domain.SurveyDesign;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
+using LearningPlatform.Data.EntityFramework.Mapping.SurveyDesigner.Nodes;
+using LearningPlatform.Data.EntityFramework.Mapping.SurveyDesigner.Questions;
+using LearningPlatform.Domain.SurveyDesign.Pages;
+using LearningPlatform.Domain.SurveyDesign.Questions;
 
 namespace LearningPlatform.Data.EntityFramework.DatabaseContext
 {
@@ -17,11 +21,18 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
         }
 
         public DbSet<Survey> Surveys { get; set; }
-
+        public DbSet<Folder> Folder { get; set; }
+        public DbSet<Node> Nodes { get; set; }
+        public DbSet<PageDefinition> PageDefinitions { get; set; }
+        public DbSet<QuestionDefinition> QuestionDefinitions { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new SurveyMap());
+            modelBuilder.Configurations.Add(new NodeMap());
+            modelBuilder.Configurations.Add(new FolderMap());
+            modelBuilder.Configurations.Add(new PageDefinitionMap());
+            modelBuilder.Configurations.Add(new QuestionDefinitionMap());
         }
 
         public override int SaveChanges()

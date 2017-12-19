@@ -94,11 +94,13 @@
     <Compile Include="DatabaseContext\ContextManagement.cs" />
     <Compile Include="DatabaseContext\DemoData\SimpleSurveyDefinitionDemo.cs" />
     <Compile Include="DatabaseContext\DemoData\SimpleSurveyPageQuestionDemo.cs" />
-    <Compile Include="DatabaseContext\Migrations\201712150435404_Add_Relationship_Survey_Page_Question.cs" />
-    <Compile Include="DatabaseContext\Migrations\201712150435404_Add_Relationship_Survey_Page_Question.Designer.cs">
-      <DependentUpon>201712150435404_Add_Relationship_Survey_Page_Question.cs</DependentUpon>
+    <Compile Include="DatabaseContext\Migrations\201712180202513_Add_Survey_Page_Question.cs" />
+    <Compile Include="DatabaseContext\Migrations\201712180202513_Add_Survey_Page_Question.Designer.cs">
+      <DependentUpon>201712180202513_Add_Survey_Page_Question.cs</DependentUpon>
     </Compile>
     <Compile Include="EntityFrameworkDataModule.cs" />
+    <Compile Include="Mapping\SurveyDesigner\Nodes\FolderMap.cs" />
+    <Compile Include="Mapping\SurveyDesigner\Nodes\NodeMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\Nodes\PageDefinitionMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\Questions\QuestionDefinitionMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\SurveyMap.cs" />
@@ -122,8 +124,8 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="DatabaseContext\Migrations\201712150435404_Add_Relationship_Survey_Page_Question.resx">
-      <DependentUpon>201712150435404_Add_Relationship_Survey_Page_Question.cs</DependentUpon>
+    <EmbeddedResource Include="DatabaseContext\Migrations\201712180202513_Add_Survey_Page_Question.resx">
+      <DependentUpon>201712180202513_Add_Survey_Page_Question.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

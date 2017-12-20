@@ -154,5 +154,12 @@ namespace LearningPlatform.Data.EntityFramework.Repository
         {
             return Context.Surveys.Any(s => s.Id == surveyId);
         }
+
+        public void UpdateLastPublished(long surveyId)
+        {
+            Survey survey = GetById(surveyId);
+            survey.LastPublished = DateTime.Now;
+            _genericRepository.Update(survey);
+        }
     }
 }

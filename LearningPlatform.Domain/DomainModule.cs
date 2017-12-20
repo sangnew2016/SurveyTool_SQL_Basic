@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using LearningPlatform.Domain.Common;
+using LearningPlatform.Domain.SurveyPublishing;
 
 namespace LearningPlatform.Domain
 {

@@ -6,6 +6,7 @@ using LearningPlatform.Data.EntityFramework.Mapping.SurveyDesigner.Nodes;
 using LearningPlatform.Data.EntityFramework.Mapping.SurveyDesigner.Questions;
 using LearningPlatform.Domain.SurveyDesign.Pages;
 using LearningPlatform.Domain.SurveyDesign.Questions;
+using LearningPlatform.Domain.SurveyPublishing;
 
 namespace LearningPlatform.Data.EntityFramework.DatabaseContext
 {
@@ -21,6 +22,7 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
         }
 
         public DbSet<Survey> Surveys { get; set; }
+        public DbSet<SurveyVersion> SurveyVersions { get; set; }
         public DbSet<Folder> Folder { get; set; }
         public DbSet<Node> Nodes { get; set; }
         public DbSet<PageDefinition> PageDefinitions { get; set; }
@@ -33,6 +35,7 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
             modelBuilder.Configurations.Add(new FolderMap());
             modelBuilder.Configurations.Add(new PageDefinitionMap());
             modelBuilder.Configurations.Add(new QuestionDefinitionMap());
+            modelBuilder.Configurations.Add(new SurveyVersionsMap());
         }
 
         public override int SaveChanges()

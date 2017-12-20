@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LearningPlatform.Domain.SurveyPublishing
+﻿namespace LearningPlatform.Domain.SurveyPublishing
 {
-    class SurveyVersion
+    public class SurveyVersion
     {
+        public long Id { get; set; }
+        public long SurveyId { get; set; }
+        public string SerializedString { get; set; }
     }
 }

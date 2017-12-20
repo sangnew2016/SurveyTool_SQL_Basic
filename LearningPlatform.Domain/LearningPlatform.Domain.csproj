@@ -76,6 +76,7 @@
     <Compile Include="DomainModule.cs" />
     <Compile Include="Exceptions\ConcurrencyException.cs" />
     <Compile Include="Exceptions\EntityNotFoundException.cs" />
+    <Compile Include="Exceptions\SurveyClosedException.cs" />
     <Compile Include="Exceptions\SurveyNotFoundException.cs" />
     <Compile Include="Mapping\DomainAutoMapperProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +94,10 @@
     <Compile Include="SurveyDesign\RepositoryContracts\SurveyDefinitionService.cs" />
     <Compile Include="SurveyDesign\Survey.cs" />
     <Compile Include="SurveyDesign\SurveyDesign.cs" />
+    <Compile Include="SurveyPublishing\ISurveyVersionRepository.cs" />
+    <Compile Include="SurveyPublishing\PublishingService.cs" />
+    <Compile Include="SurveyPublishing\SurveyPublishing.cs" />
+    <Compile Include="SurveyPublishing\SurveyVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

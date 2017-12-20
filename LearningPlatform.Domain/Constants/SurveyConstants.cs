@@ -8,5 +8,7 @@
         public static string NA = "N/A";
         public static string THANK_YOU_PAGE_NAME = "ThankYouPage";
         public static string SURVEY_REPORT_DATE_FORMAT = "MMM dd, yyyy hh:mm tt";
+
+        public static long SimpleSurveyPageQuestionSurveyId = 1;
     }
 }

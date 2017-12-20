@@ -54,6 +54,7 @@
     <Compile Include="Repository\DummyUnitOfWorkFactory.cs" />
     <Compile Include="Repository\SurveyMemoryContext.cs" />
     <Compile Include="Repository\SurveyMemoryRepository.cs" />
+    <Compile Include="Repository\SurveyVersionMemoryRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LearningPlatform.Domain\LearningPlatform.Domain.csproj">

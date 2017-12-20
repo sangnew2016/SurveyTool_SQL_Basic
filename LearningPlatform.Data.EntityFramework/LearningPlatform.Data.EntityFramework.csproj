@@ -98,12 +98,21 @@
     <Compile Include="DatabaseContext\Migrations\201712180202513_Add_Survey_Page_Question.Designer.cs">
       <DependentUpon>201712180202513_Add_Survey_Page_Question.cs</DependentUpon>
     </Compile>
+    <Compile Include="DatabaseContext\Migrations\201712190356169_Add_SurveyVersion.cs" />
+    <Compile Include="DatabaseContext\Migrations\201712190356169_Add_SurveyVersion.Designer.cs">
+      <DependentUpon>201712190356169_Add_SurveyVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseContext\Migrations\201712190443441_Change_Something.cs" />
+    <Compile Include="DatabaseContext\Migrations\201712190443441_Change_Something.Designer.cs">
+      <DependentUpon>201712190443441_Change_Something.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntityFrameworkDataModule.cs" />
     <Compile Include="Mapping\SurveyDesigner\Nodes\FolderMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\Nodes\NodeMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\Nodes\PageDefinitionMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\Questions\QuestionDefinitionMap.cs" />
     <Compile Include="Mapping\SurveyDesigner\SurveyMap.cs" />
+    <Compile Include="Mapping\SurveyDesigner\SurveyVersionsMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BaseRepository\GenericRepository.cs" />
     <Compile Include="DatabaseContext\SurveyContextProvider.cs" />
@@ -111,6 +120,7 @@
     <Compile Include="DatabaseContext\SurveyContextConfiguration.cs" />
     <Compile Include="DatabaseContext\SurveyContextInitializer.cs" />
     <Compile Include="Repository\SurveyRepository.cs" />
+    <Compile Include="Repository\SurveyVersionRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LearningPlatform.Domain\LearningPlatform.Domain.csproj">
@@ -126,6 +136,12 @@
   <ItemGroup>
     <EmbeddedResource Include="DatabaseContext\Migrations\201712180202513_Add_Survey_Page_Question.resx">
       <DependentUpon>201712180202513_Add_Survey_Page_Question.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseContext\Migrations\201712190356169_Add_SurveyVersion.resx">
+      <DependentUpon>201712190356169_Add_SurveyVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseContext\Migrations\201712190443441_Change_Something.resx">
+      <DependentUpon>201712190443441_Change_Something.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

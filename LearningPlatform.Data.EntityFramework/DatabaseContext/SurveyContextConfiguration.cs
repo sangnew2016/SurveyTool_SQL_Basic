@@ -8,6 +8,7 @@ using AutoMapper;
 using System.Linq;
 using LearningPlatform.Data.EntityFramework.DatabaseContext.DemoData;
 using LearningPlatform.Domain.Common;
+using LearningPlatform.Domain.Constants;
 using LearningPlatform.Domain.Mapping;
 
 namespace LearningPlatform.Data.EntityFramework.DatabaseContext
@@ -58,7 +59,14 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
                     var surveyContextProvider = componentContext.Resolve<DummyRequestObjectProvider<SurveyContext>>();
                     surveyContextProvider.Set(context);
 
-                    componentContext.Resolve<SimpleSurveyPageQuestionDemo>().InsertData();
+
+                    var simpleSurveyPageQuestion = componentContext.Resolve<SimpleSurveyPageQuestionDemo>();
+                    //1. create question, page, survey
+                    //2. create surveyversion (publish)
+                    var survey = simpleSurveyPageQuestion.InsertData();
+                    simpleSurveyPageQuestion.PublishSurvey(survey.Id);
+
+
                 }
             }
             catch (Exception e)

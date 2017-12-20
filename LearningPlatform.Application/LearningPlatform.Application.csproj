@@ -52,6 +52,7 @@
     <Compile Include="Models\SurveyInfoVersionModel.cs" />
     <Compile Include="Models\SurveyViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SurveyDesign\PublishingAppService.cs" />
     <Compile Include="SurveyDesign\SurveyDefinitionAppService.cs" />
   </ItemGroup>
   <ItemGroup>

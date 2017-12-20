@@ -15,5 +15,6 @@ namespace LearningPlatform.Domain.SurveyDesign.RepositoryContracts
         IEnumerable<Survey> GetByUserId(string userId);
         IEnumerable<Survey> SearchSurveys(SurveySearchFilter surveySearchModel, string userId);
         bool Exists(long surveyId);
+        void UpdateLastPublished(long surveyId);
     }
 }

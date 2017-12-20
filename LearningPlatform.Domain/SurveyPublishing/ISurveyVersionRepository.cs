@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace LearningPlatform.Domain.SurveyPublishing
 {
-    class ISurveyVersionRepository
+    public interface ISurveyVersionRepository
     {
+        void Add(SurveyVersion surveyVersion);
+        SurveyVersion GetLatest(long surveyId);
+        List<SurveyVersion> GetAll(long surveyId);
     }
 }

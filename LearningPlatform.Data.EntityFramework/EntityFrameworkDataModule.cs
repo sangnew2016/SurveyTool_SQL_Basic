@@ -4,6 +4,7 @@ using LearningPlatform.Data.EntityFramework.DatabaseContext;
 using LearningPlatform.Data.EntityFramework.Repository;
 using LearningPlatform.Domain.Common;
 using LearningPlatform.Domain.SurveyDesign.RepositoryContracts;
+using LearningPlatform.Domain.SurveyPublishing;
 
 namespace LearningPlatform.Data.EntityFramework
 {
@@ -19,6 +20,7 @@ namespace LearningPlatform.Data.EntityFramework
         private static void RegisterRepositories(ContainerBuilder builder)
         {
             builder.RegisterType<SurveyRepository>().As<ISurveyRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<SurveyVersionRepository>().As<ISurveyVersionRepository>().InstancePerLifetimeScope();
         }
 
         private static void RegisterContexts(ContainerBuilder builder)

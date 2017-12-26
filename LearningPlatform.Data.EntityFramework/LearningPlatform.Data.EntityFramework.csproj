@@ -92,6 +92,7 @@
     <Compile Include="BaseRepository\UnitOfWork.cs" />
     <Compile Include="BaseRepository\UnitOfWorkFactory.cs" />
     <Compile Include="DatabaseContext\ContextManagement.cs" />
+    <Compile Include="DatabaseContext\DbContextExtensions.cs" />
     <Compile Include="DatabaseContext\DemoData\SimpleSurveyDefinitionDemo.cs" />
     <Compile Include="DatabaseContext\DemoData\SimpleSurveyPageQuestionDemo.cs" />
     <Compile Include="DatabaseContext\Migrations\201712180202513_Add_Survey_Page_Question.cs" />

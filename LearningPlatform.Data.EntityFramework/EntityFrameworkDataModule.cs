@@ -25,8 +25,12 @@ namespace LearningPlatform.Data.EntityFramework
 
         private static void RegisterContexts(ContainerBuilder builder)
         {
-            builder.RegisterType<SurveyContextProvider>().InstancePerLifetimeScope();
-            builder.RegisterType<RequestObjectProvider<SurveyContext>>().As<IRequestObjectProvider<SurveyContext>>().InstancePerLifetimeScope();
+            //Note: ve ban chat SurveyContextProvider & RequestObjectProvider<SurveyContext> la nhu nhau
+            // -> khi ta dang ky the nay, se tao 2 context khac nhau
+            // -> SaveChanges khong affect (careful cho cai nay)
+
+            //builder.RegisterType<SurveyContextProvider>().InstancePerLifetimeScope();
+            builder.RegisterType<RequestObjectProvider<SurveyContext>>().As<IRequestObjectProvider<SurveyContext>>().SingleInstance();
         }
     }
 }

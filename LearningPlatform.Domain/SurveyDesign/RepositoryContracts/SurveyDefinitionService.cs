@@ -16,7 +16,8 @@ namespace LearningPlatform.Domain.SurveyDesign.RepositoryContracts
         public void UpdateSurveyStatus(Survey surveyInfo, SurveyStatus status)
         {
             surveyInfo.Status = status;
-            surveyInfo.RowVersion = GuidUtil.GenerateGuidAsByteArray();
+            //TODO: no need to set rowversion (system is automactically)
+            //surveyInfo.RowVersion = GuidUtil.GenerateGuidAsByteArray();
             _surveyRepository.Update(surveyInfo);
         }
 

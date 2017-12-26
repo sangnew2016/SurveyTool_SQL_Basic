@@ -31,8 +31,7 @@ namespace LearningPlatform.Domain.SurveyPublishing
                 SurveyId = surveyId,
                 SerializedString = JsonConvert.SerializeObject(surveyAndLayout, Formatting.Indented, _serializerSettings)
             };
-            _surveyVersionRepository.Add(surveyVersion);
-            _surveyRepository.UpdateLastPublished(surveyId);
+            _surveyVersionRepository.Add(surveyVersion);            
         }
 
         public Survey GetLatestVersion(long surveyId)

@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using LearningPlatform.Domain.Common;
+using System.Data.Entity;
 
 namespace LearningPlatform.Data.EntityFramework.DatabaseContext
 {
@@ -17,7 +18,10 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
         {
             get
             {
-                return _surveyContextProvider.Get().ChangeTracker.HasChanges();
+                var surveyContext = _surveyContextProvider.Get();
+                var hasChanges = surveyContext.ChangeTracker.HasChanges();
+                var isDirty = surveyContext.IsDirty();
+                return hasChanges;
                        //_responsesContextProvider.Get(true).ChangeTracker.HasChanges() ||
                        //_responsesContextProvider.Get(false).ChangeTracker.HasChanges();
             }

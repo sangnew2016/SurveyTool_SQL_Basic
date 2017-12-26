@@ -4,12 +4,9 @@ using System.Web.Mvc;
 using System.Data.Entity.Migrations;
 using Autofac.Features.ResolveAnything;
 using LearningPlatform.Domain;
-using AutoMapper;
 using System.Linq;
 using LearningPlatform.Data.EntityFramework.DatabaseContext.DemoData;
 using LearningPlatform.Domain.Common;
-using LearningPlatform.Domain.Constants;
-using LearningPlatform.Domain.Mapping;
 
 namespace LearningPlatform.Data.EntityFramework.DatabaseContext
 {
@@ -56,17 +53,14 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext
 
                 if (!context.Surveys.Any())
                 {
-                    var surveyContextProvider = componentContext.Resolve<DummyRequestObjectProvider<SurveyContext>>();
-                    surveyContextProvider.Set(context);
-
+                    var dummySurveyContextProvider = componentContext.Resolve<DummyRequestObjectProvider<SurveyContext>>();
+                    dummySurveyContextProvider.Set(context);
 
                     var simpleSurveyPageQuestion = componentContext.Resolve<SimpleSurveyPageQuestionDemo>();
                     //1. create question, page, survey
                     //2. create surveyversion (publish)
                     var survey = simpleSurveyPageQuestion.InsertData();
                     simpleSurveyPageQuestion.PublishSurvey(survey.Id);
-
-
                 }
             }
             catch (Exception e)

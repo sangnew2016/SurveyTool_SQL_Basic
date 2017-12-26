@@ -15,11 +15,10 @@ namespace LearningPlatform.Application.SurveyDesign
             _surveyPublishingFactory = surveyPublishingFactory;
         }
 
-        public Survey Publish(long surveyId)
+        public void Publish(long surveyId)
         {
             var publisher = _surveyPublishingFactory.Invoke();
-            var survey = publisher.Publish(surveyId);
-            return survey;
+            publisher.Publish(surveyId);
         }
 
     }

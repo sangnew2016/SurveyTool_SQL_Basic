@@ -1,4 +1,5 @@
-﻿using LearningPlatform.Domain.Common;
+﻿using System;
+using LearningPlatform.Domain.Common;
 using LearningPlatform.Domain.Constants;
 using LearningPlatform.Domain.SurveyDesign;
 using LearningPlatform.Domain.SurveyDesign.RepositoryContracts;
@@ -8,19 +9,22 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext.DemoData
 {
     public class SimpleSurveyPageQuestionDemo
     {
-        private readonly ISurveyRepository _surveyRepository;
         private readonly IRequestObjectProvider<SurveyContext> _surveyContextProvider;
+        private readonly ISurveyRepository _surveyRepository;
+        private readonly SurveyDefinitionService _surveyDefinitionService;
         private readonly SurveyDesign.Factory _surveyDesignFactory;
         private readonly SurveyPublishing.Factory _surveyPublishingFactory;
 
         public SimpleSurveyPageQuestionDemo(
-            ISurveyRepository surveyRepository,
             IRequestObjectProvider<SurveyContext> surveyContextProvider,
+            ISurveyRepository surveyRepository,
+            SurveyDefinitionService surveyDefinitionService,
             SurveyDesign.Factory surveyDesignFactory,
             SurveyPublishing.Factory surveyPublishingFactory)
         {
-            _surveyRepository = surveyRepository;
             _surveyContextProvider = surveyContextProvider;
+            _surveyRepository = surveyRepository;
+            _surveyDefinitionService = surveyDefinitionService;
             _surveyDesignFactory = surveyDesignFactory;
             _surveyPublishingFactory = surveyPublishingFactory;
         }
@@ -56,14 +60,27 @@ namespace LearningPlatform.Data.EntityFramework.DatabaseContext.DemoData
             return survey;
         }
 
-        public Survey PublishSurvey(long surveyId)
+        public void PublishSurvey(long surveyId)
         {
-            //output to survey version
-            var publisher = _surveyPublishingFactory.Invoke();
-            var survey = publisher.Publish(surveyId);
-            _surveyContextProvider.Get().SaveChanges();
+            //no need here (param maybe survey - for test)
+            var survey = _surveyRepository.GetById(surveyId);
+            if (survey == null)
+            {
+                throw new Exception("Survey does not exist");
+            }
 
-            return survey;
+            //sorry, ambious to use delegate
+            //insert surveyversion
+            var publisher = _surveyPublishingFactory.Invoke();
+            publisher.Publish(surveyId);
+
+            //update status survey
+            survey.LastPublished = DateTime.Now;
+            survey.Status = SurveyStatus.Open;
+            _surveyRepository.Update(survey);
+
+            //save change (or API Action - save change)
+            _surveyContextProvider.Get().SaveChanges();
         }
     }
 }
